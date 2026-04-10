@@ -1,0 +1,61 @@
+{
+  "program": {
+    "name": "Programa de Treino Full Body 3x/semana",
+    "focus": "Preservação muscular em déficit calórico (emagrecimento)",
+    "principles": [
+      "Compostos pesados primeiro → maior gasto calórico e preservação de força",
+      "Progressão de carga semanal → tente adicionar 2,5kg nos compostos a cada 1-2 semanas",
+      "Descanso entre séries: 2-3 min (compostos), 60-90s (isoladores)",
+      "Cadência: 2s excêntrica, 1s concêntrica (sem enrolar)"
+    ]
+  },
+  "workouts": [
+    {
+      "id": "a",
+      "name": "Treino A",
+      "day": "Segunda",
+      "exercises": [
+        { "id": "a1", "name": "Agachamento livre", "sets": "4x6-8", "obs": "Prioridade: carga pesada" },
+        { "id": "a2", "name": "Supino reto (barra ou halter)", "sets": "4x6-8", "obs": "" },
+        { "id": "a3", "name": "Remada curvada", "sets": "3x8-10", "obs": "Pegada pronada" },
+        { "id": "a4", "name": "Desenvolvimento militar (barra)", "sets": "3x8-10", "obs": "Em pé, sem impulso" },
+        { "id": "a5", "name": "Rosca direta (barra)", "sets": "2x10-12", "obs": "" },
+        { "id": "a6", "name": "Tríceps corda", "sets": "2x10-12", "obs": "" },
+        { "id": "a7", "name": "Abdominal (prancha)", "sets": "3x 30-45s", "obs": "" }
+      ]
+    },
+    {
+      "id": "b",
+      "name": "Treino B",
+      "day": "Quarta",
+      "exercises": [
+        { "id": "b1", "name": "Levantamento terra", "sets": "4x5-6", "obs": "Respeite a forma" },
+        { "id": "b2", "name": "Supino inclinado (halter)", "sets": "3x8-10", "obs": "" },
+        { "id": "b3", "name": "Puxada frontal", "sets": "4x8-10", "obs": "" },
+        { "id": "b4", "name": "Leg press", "sets": "3x10-12", "obs": "" },
+        { "id": "b5", "name": "Elevação lateral", "sets": "3x12-15", "obs": "" },
+        { "id": "b6", "name": "Rosca martelo", "sets": "2x10-12", "obs": "" },
+        { "id": "b7", "name": "Abdominal (elevação de pernas)", "sets": "3x12-15", "obs": "" }
+      ]
+    },
+    {
+      "id": "c",
+      "name": "Treino C",
+      "day": "Sexta",
+      "exercises": [
+        { "id": "c1", "name": "Agachamento frontal ou Búlgaro", "sets": "4x8-10", "obs": "Alternar a cada 4 semanas" },
+        { "id": "c2", "name": "Barra fixa (ou graviton)", "sets": "4x6-10", "obs": "Adicione peso quando fizer 10" },
+        { "id": "c3", "name": "Supino reto (halter)", "sets": "3x8-10", "obs": "" },
+        { "id": "c4", "name": "Remada unilateral (halter)", "sets": "3x10-12", "obs": "" },
+        { "id": "c5", "name": "Face pull", "sets": "3x15", "obs": "Saúde do ombro" },
+        { "id": "c6", "name": "Tríceps francês", "sets": "2x10-12", "obs": "" },
+        { "id": "c7", "name": "Abdominal (cable crunch)", "sets": "3x12-15", "obs": "" }
+      ]
+    }
+  ],
+  "periodization": [
+    { "weeks": "1-2", "focus": "Adaptação: trabalhe no limite inferior das reps, aprenda os movimentos" },
+    { "weeks": "3-6", "focus": "Progressão: aumente carga semanalmente, chegue no limite superior das reps" },
+    { "weeks": "7-8", "focus": "Deload: reduza volume em 40%, mantenha intensidade — recuperação" }
+  ]
+}
