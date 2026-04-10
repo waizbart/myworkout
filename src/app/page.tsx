@@ -186,7 +186,7 @@ export default function Home() {
             return (
               <div
                 key={ex.id}
-                className={`border rounded-lg transition-all ${
+                className={`border rounded-lg transition-all overflow-hidden ${
                   isExpanded
                     ? "border-white/20 bg-white/[0.03]"
                     : "border-white/[0.08] active:border-white/15"
@@ -240,29 +240,31 @@ export default function Home() {
 
                 {/* Expanded Content */}
                 {isExpanded && (
-                  <div className="px-3 sm:px-4 pb-4 border-t border-white/[0.08]">
+                  <div className="px-3 sm:px-4 pb-4 border-t border-white/[0.08] overflow-hidden">
                     {/* Add Entry Form */}
                     <div className="mt-3 space-y-2">
-                      <div className="grid grid-cols-[1fr_1fr] gap-2 sm:grid-cols-[auto_1fr_auto]">
-                        <input
-                          type="date"
-                          value={formDate}
-                          onChange={(e) => setFormDate(e.target.value)}
-                          className="col-span-2 sm:col-span-1 bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white/70 focus:outline-none focus:border-white/30"
-                        />
+                      <input
+                        type="date"
+                        value={formDate}
+                        onChange={(e) => setFormDate(e.target.value)}
+                        className="w-full bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white/70 focus:outline-none focus:border-white/30"
+                      />
+                      <div className="flex gap-2">
                         <input
                           type="number"
+                          inputMode="decimal"
                           placeholder="Peso (kg)"
                           value={formWeight}
                           onChange={(e) => setFormWeight(e.target.value)}
-                          className="bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30"
+                          className="w-full min-w-0 flex-1 bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30"
                         />
                         <input
                           type="text"
+                          inputMode="numeric"
                           placeholder="Reps"
                           value={formReps}
                           onChange={(e) => setFormReps(e.target.value)}
-                          className="bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30"
+                          className="w-full min-w-0 flex-1 bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30"
                         />
                       </div>
                       <div className="flex gap-2">
@@ -274,7 +276,7 @@ export default function Home() {
                           onKeyDown={(e) => {
                             if (e.key === "Enter") addEntry(ex.id);
                           }}
-                          className="bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 flex-1 min-w-0"
+                          className="w-full min-w-0 flex-1 bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30"
                         />
                         <button
                           onClick={() => addEntry(ex.id)}
