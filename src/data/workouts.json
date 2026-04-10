@@ -18,7 +18,7 @@
         { "id": "a1", "name": "Leg Press 45°", "sets": "4x6-8", "obs": "Prioridade: carga pesada" },
         { "id": "a2", "name": "Supino reto (barra ou halter)", "sets": "4x6-8", "obs": "" },
         { "id": "a3", "name": "Remada curvada", "sets": "3x8-10", "obs": "Pegada pronada" },
-        { "id": "a4", "name": "Desenvolvimento militar (barra)", "sets": "3x8-10", "obs": "Em pé, sem impulso" },
+        { "id": "a4", "name": "Desenvolvimento militar (halteres)", "sets": "3x8-10", "obs": "Em pé, sem impulso" },
         { "id": "a5", "name": "Rosca direta (barra)", "sets": "2x10-12", "obs": "" },
         { "id": "a6", "name": "Tríceps corda", "sets": "2x10-12", "obs": "" },
         { "id": "a7", "name": "Abdominal (prancha)", "sets": "3x 30-45s", "obs": "" }
