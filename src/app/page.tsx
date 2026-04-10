@@ -32,7 +32,7 @@ function saveLogs(logs: ExerciseLogs) {
 
 function formatDate(dateStr: string): string {
   const [y, m, d] = dateStr.split("-");
-  return `${d}/${m}/${y}`;
+  return `${d}/${m}`;
 }
 
 function getTodayStr(): string {
@@ -145,18 +145,18 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
       {/* Header */}
       <header className="border-b border-white/10 sticky top-0 bg-black/95 backdrop-blur-sm z-10">
-        <div className="max-w-2xl mx-auto px-4 py-4">
-          <h1 className="text-lg font-bold tracking-tight">MyWorkout</h1>
-          <p className="text-xs text-white/40 mt-0.5">{workoutData.program.focus}</p>
+        <div className="max-w-2xl mx-auto px-3 sm:px-4 py-3 sm:py-4">
+          <h1 className="text-base sm:text-lg font-bold tracking-tight">MyWorkout</h1>
+          <p className="text-[11px] sm:text-xs text-white/40 mt-0.5">{workoutData.program.focus}</p>
         </div>
       </header>
 
-      <main className="max-w-2xl mx-auto px-4 py-6">
+      <main className="max-w-2xl mx-auto px-3 sm:px-4 py-4 sm:py-6">
         {/* Workout Tabs */}
-        <div className="flex gap-2 mb-6">
+        <div className="flex gap-1.5 sm:gap-2 mb-5 sm:mb-6">
           {workoutData.workouts.map((w, i) => (
             <button
               key={w.id}
@@ -164,13 +164,13 @@ export default function Home() {
                 setActiveWorkout(i);
                 setExpandedExercise(null);
               }}
-              className={`flex-1 py-2.5 px-3 text-sm font-medium rounded-lg transition-all ${
+              className={`flex-1 py-2 sm:py-2.5 px-2 sm:px-3 text-xs sm:text-sm font-medium rounded-lg transition-all ${
                 activeWorkout === i
                   ? "bg-white text-black"
-                  : "bg-white/5 text-white/50 hover:bg-white/10 hover:text-white/70"
+                  : "bg-white/5 text-white/50 active:bg-white/10"
               }`}
             >
-              <span className="block text-xs opacity-60">{w.day}</span>
+              <span className="block text-[10px] sm:text-xs opacity-60">{w.day}</span>
               <span className="block">{w.name}</span>
             </button>
           ))}
@@ -189,29 +189,29 @@ export default function Home() {
                 className={`border rounded-lg transition-all ${
                   isExpanded
                     ? "border-white/20 bg-white/[0.03]"
-                    : "border-white/[0.08] hover:border-white/15"
+                    : "border-white/[0.08] active:border-white/15"
                 }`}
               >
                 {/* Exercise Header */}
                 <button
                   onClick={() => toggleExercise(ex.id)}
-                  className="w-full text-left px-4 py-3 flex items-center gap-3"
+                  className="w-full text-left px-3 sm:px-4 py-3 flex items-start gap-2 sm:gap-3"
                 >
-                  <span className="text-xs text-white/25 font-mono w-5 shrink-0">
+                  <span className="text-[11px] text-white/25 font-mono w-5 shrink-0 pt-0.5">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <span className="font-medium text-sm">{ex.name}</span>
-                      <span className="text-xs text-white/30">{ex.sets}</span>
+                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                      <span className="font-medium text-[13px] sm:text-sm leading-tight">{ex.name}</span>
+                      <span className="text-[11px] sm:text-xs text-white/30">{ex.sets}</span>
                     </div>
                     {ex.obs && (
-                      <p className="text-xs text-white/30 mt-0.5">{ex.obs}</p>
+                      <p className="text-[11px] text-white/30 mt-0.5 leading-snug">{ex.obs}</p>
                     )}
                   </div>
-                  <div className="flex items-center gap-3 shrink-0">
+                  <div className="flex items-center gap-2 sm:gap-3 shrink-0 pt-0.5">
                     {lastWeight && (
-                      <span className="text-xs text-white/50 font-mono">
+                      <span className="text-[11px] sm:text-xs text-white/50 font-mono">
                         {lastWeight}kg
                       </span>
                     )}
@@ -221,7 +221,7 @@ export default function Home() {
                       </span>
                     )}
                     <svg
-                      className={`w-4 h-4 text-white/30 transition-transform ${
+                      className={`w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/30 transition-transform ${
                         isExpanded ? "rotate-180" : ""
                       }`}
                       fill="none"
@@ -240,29 +240,29 @@ export default function Home() {
 
                 {/* Expanded Content */}
                 {isExpanded && (
-                  <div className="px-4 pb-4 border-t border-white/[0.08]">
+                  <div className="px-3 sm:px-4 pb-4 border-t border-white/[0.08]">
                     {/* Add Entry Form */}
                     <div className="mt-3 space-y-2">
-                      <div className="flex gap-2">
+                      <div className="grid grid-cols-[1fr_1fr] gap-2 sm:grid-cols-[auto_1fr_auto]">
                         <input
                           type="date"
                           value={formDate}
                           onChange={(e) => setFormDate(e.target.value)}
-                          className="bg-white/5 border border-white/10 rounded px-2.5 py-1.5 text-xs text-white/70 focus:outline-none focus:border-white/30 w-[130px]"
+                          className="col-span-2 sm:col-span-1 bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white/70 focus:outline-none focus:border-white/30"
                         />
                         <input
                           type="number"
                           placeholder="Peso (kg)"
                           value={formWeight}
                           onChange={(e) => setFormWeight(e.target.value)}
-                          className="bg-white/5 border border-white/10 rounded px-2.5 py-1.5 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 flex-1"
+                          className="bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30"
                         />
                         <input
                           type="text"
                           placeholder="Reps"
                           value={formReps}
                           onChange={(e) => setFormReps(e.target.value)}
-                          className="bg-white/5 border border-white/10 rounded px-2.5 py-1.5 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 w-[70px]"
+                          className="bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30"
                         />
                       </div>
                       <div className="flex gap-2">
@@ -274,13 +274,13 @@ export default function Home() {
                           onKeyDown={(e) => {
                             if (e.key === "Enter") addEntry(ex.id);
                           }}
-                          className="bg-white/5 border border-white/10 rounded px-2.5 py-1.5 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 flex-1"
+                          className="bg-white/5 border border-white/10 rounded px-2.5 py-2 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 flex-1 min-w-0"
                         />
                         <button
                           onClick={() => addEntry(ex.id)}
-                          className="bg-white text-black text-xs font-medium px-4 py-1.5 rounded hover:bg-white/90 transition-colors shrink-0"
+                          className="bg-white text-black text-xs font-medium px-3 sm:px-4 py-2 rounded active:bg-white/80 transition-colors shrink-0"
                         >
-                          Registrar
+                          Salvar
                         </button>
                       </div>
                     </div>
@@ -291,33 +291,35 @@ export default function Home() {
                         <h4 className="text-[10px] uppercase tracking-wider text-white/25 mb-2">
                           Histórico
                         </h4>
-                        <div className="space-y-1">
+                        <div className="space-y-1.5 sm:space-y-1">
                           {(logs[ex.id] || []).map((entry, i) => (
                             <div
                               key={`${entry.date}-${i}`}
-                              className="flex items-center gap-2 text-xs group"
+                              className="flex items-start gap-1.5 sm:gap-2 text-[11px] sm:text-xs group"
                             >
-                              <span className="text-white/30 font-mono w-[72px] shrink-0">
+                              <span className="text-white/30 font-mono shrink-0">
                                 {formatDate(entry.date)}
                               </span>
-                              {entry.weight && (
-                                <span className="text-white/70 font-medium">
-                                  {entry.weight}kg
-                                </span>
-                              )}
-                              {entry.reps && (
-                                <span className="text-white/40">
-                                  {entry.reps} reps
-                                </span>
-                              )}
-                              {entry.notes && (
-                                <span className="text-white/30 truncate flex-1">
-                                  — {entry.notes}
-                                </span>
-                              )}
+                              <div className="flex flex-wrap items-baseline gap-x-1.5 gap-y-0.5 flex-1 min-w-0">
+                                {entry.weight && (
+                                  <span className="text-white/70 font-medium">
+                                    {entry.weight}kg
+                                  </span>
+                                )}
+                                {entry.reps && (
+                                  <span className="text-white/40">
+                                    {entry.reps} reps
+                                  </span>
+                                )}
+                                {entry.notes && (
+                                  <span className="text-white/30 break-all">
+                                    — {entry.notes}
+                                  </span>
+                                )}
+                              </div>
                               <button
                                 onClick={() => deleteEntry(ex.id, i)}
-                                className="text-transparent group-hover:text-white/30 hover:!text-red-400 transition-colors ml-auto shrink-0"
+                                className="text-white/20 sm:text-transparent sm:group-hover:text-white/30 active:!text-red-400 sm:hover:!text-red-400 transition-colors shrink-0 p-0.5"
                                 title="Remover"
                               >
                                 <svg
@@ -347,14 +349,14 @@ export default function Home() {
         </div>
 
         {/* Periodization */}
-        <div className="mt-8 border border-white/[0.08] rounded-lg p-4">
-          <h3 className="text-xs uppercase tracking-wider text-white/25 mb-3">
+        <div className="mt-8 border border-white/[0.08] rounded-lg p-3 sm:p-4">
+          <h3 className="text-[10px] sm:text-xs uppercase tracking-wider text-white/25 mb-3">
             Periodização (8 semanas)
           </h3>
           <div className="space-y-2">
             {workoutData.periodization.map((p) => (
-              <div key={p.weeks} className="flex gap-3 text-xs">
-                <span className="text-white/50 font-mono shrink-0 w-12">
+              <div key={p.weeks} className="flex gap-2 sm:gap-3 text-[11px] sm:text-xs">
+                <span className="text-white/50 font-mono shrink-0 w-10 sm:w-12">
                   Sem {p.weeks}
                 </span>
                 <span className="text-white/40">{p.focus}</span>
@@ -364,13 +366,13 @@ export default function Home() {
         </div>
 
         {/* Principles */}
-        <div className="mt-4 border border-white/[0.08] rounded-lg p-4">
-          <h3 className="text-xs uppercase tracking-wider text-white/25 mb-3">
+        <div className="mt-3 sm:mt-4 border border-white/[0.08] rounded-lg p-3 sm:p-4">
+          <h3 className="text-[10px] sm:text-xs uppercase tracking-wider text-white/25 mb-3">
             Princípios
           </h3>
           <div className="space-y-1.5">
             {workoutData.program.principles.map((p, i) => (
-              <p key={i} className="text-xs text-white/35">
+              <p key={i} className="text-[11px] sm:text-xs text-white/35 leading-relaxed">
                 {p}
               </p>
             ))}
@@ -381,13 +383,13 @@ export default function Home() {
         <div className="mt-6 flex gap-2 justify-center pb-8">
           <button
             onClick={exportData}
-            className="text-[11px] text-white/25 hover:text-white/50 transition-colors px-3 py-1.5 border border-white/[0.08] rounded hover:border-white/15"
+            className="text-[11px] text-white/25 active:text-white/50 transition-colors px-3 py-2 border border-white/[0.08] rounded active:border-white/15"
           >
             Exportar dados
           </button>
           <button
             onClick={importData}
-            className="text-[11px] text-white/25 hover:text-white/50 transition-colors px-3 py-1.5 border border-white/[0.08] rounded hover:border-white/15"
+            className="text-[11px] text-white/25 active:text-white/50 transition-colors px-3 py-2 border border-white/[0.08] rounded active:border-white/15"
           >
             Importar dados
           </button>
