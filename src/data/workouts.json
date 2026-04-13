@@ -29,7 +29,7 @@
       "name": "Treino B",
       "day": "Quarta",
       "exercises": [
-        { "id": "b1", "name": "Levantamento terra", "sets": "4x5-6", "obs": "Respeite a forma" },
+        { "id": "b1", "name": "Stiff na máquina", "sets": "4x5-6", "obs": "Foco em posteriores" },
         { "id": "b2", "name": "Supino inclinado (halter)", "sets": "3x8-10", "obs": "" },
         { "id": "b3", "name": "Puxada frontal", "sets": "4x8-10", "obs": "" },
         { "id": "b4", "name": "Leg press", "sets": "3x10-12", "obs": "" },
@@ -43,7 +43,7 @@
       "name": "Treino C",
       "day": "Sexta",
       "exercises": [
-        { "id": "c1", "name": "Agachamento frontal ou Búlgaro", "sets": "4x8-10", "obs": "Alternar a cada 4 semanas" },
+        { "id": "c1", "name": "Agachamento Hack (máquina)", "sets": "4x8-10", "obs": "Foco em quadríceps" },
         { "id": "c2", "name": "Barra fixa (ou graviton)", "sets": "4x6-10", "obs": "Adicione peso quando fizer 10" },
         { "id": "c3", "name": "Supino reto (halter)", "sets": "3x8-10", "obs": "" },
         { "id": "c4", "name": "Remada unilateral (halter)", "sets": "3x10-12", "obs": "" },
