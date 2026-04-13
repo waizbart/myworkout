@@ -29,7 +29,7 @@
       "name": "Treino B",
       "day": "Quarta",
       "exercises": [
-        { "id": "b1", "name": "Stiff na máquina", "sets": "4x5-6", "obs": "Foco em posteriores" },
+        { "id": "b1", "name": "Glúteo na máquina", "sets": "4x10-12", "obs": "Uma perna por vez" },
         { "id": "b2", "name": "Supino inclinado (halter)", "sets": "3x8-10", "obs": "" },
         { "id": "b3", "name": "Puxada frontal", "sets": "4x8-10", "obs": "" },
         { "id": "b4", "name": "Mesa flexora", "sets": "3x10-12", "obs": "Foco em posteriores" },
