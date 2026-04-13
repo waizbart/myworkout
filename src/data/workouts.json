@@ -32,10 +32,11 @@
         { "id": "b1", "name": "Stiff na máquina", "sets": "4x5-6", "obs": "Foco em posteriores" },
         { "id": "b2", "name": "Supino inclinado (halter)", "sets": "3x8-10", "obs": "" },
         { "id": "b3", "name": "Puxada frontal", "sets": "4x8-10", "obs": "" },
-        { "id": "b4", "name": "Leg press", "sets": "3x10-12", "obs": "" },
+        { "id": "b4", "name": "Mesa flexora", "sets": "3x10-12", "obs": "Foco em posteriores" },
         { "id": "b5", "name": "Elevação lateral", "sets": "3x12-15", "obs": "" },
         { "id": "b6", "name": "Rosca martelo", "sets": "2x10-12", "obs": "" },
-        { "id": "b7", "name": "Abdominal (elevação de pernas)", "sets": "3x12-15", "obs": "" }
+        { "id": "b7", "name": "Abdominal (elevação de pernas)", "sets": "3x12-15", "obs": "" },
+        { "id": "b8", "name": "Panturrilha na máquina", "sets": "2x15-20", "obs": "" }
       ]
     },
     {
